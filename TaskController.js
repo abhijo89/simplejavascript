@@ -43,6 +43,9 @@ TaskController.prototype = {
 
 
     addTask: function (sender, args) {
+    if(args.task=='a'){
+        throw "You Cant add task 'a'. Demo Exception.";
+    }
         this.model.addTask(args.task);
     },
 

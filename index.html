@@ -4,6 +4,7 @@
 <head>
     <title>Javascript MVC with sentry</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.ravenjs.com/3.24.0/raven.min.js" crossorigin="anonymous"></script>
 
     <style>
 
@@ -25,12 +26,24 @@
     <input type="button" class="js-delete-task-button" value="Delete Tasks">
 
 </div>
+<script>
+    Raven.config('https://b9ee58f927004392a49dd00f5d558727@sentry.io/623562').install()
+    Raven.context(function () {
+    release:'v1.0.0'
+    });
+
+Raven.setUserContext({
+    email: 'user1@abc.com',
+    id: '123'
+});
+
+</script>
 <!-- end js-container -->
 <script src="EventDispatcher.js"></script>
-    <script src="TaskModel.js"></script>
-    <script src="TaskView.js"></script>
-    <script src="TaskController.js"></script>
-    <script src="App.js"></script>
+<script src="TaskModel.js"></script>
+<script src="TaskView.js"></script>
+<script src="TaskController.js"></script>
+<script src="App.js"></script>
 </body>
 
 </html>
