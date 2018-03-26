@@ -1,4 +1,4 @@
-var TaskView = function (model) {
+ var TaskView = function (model) {
     this.model = model;
     this.addTaskEvent = new Event(this);
     this.selectTaskEvent = new Event(this);
@@ -8,7 +8,6 @@ var TaskView = function (model) {
 
     this.init();
 };
-
 TaskView.prototype = {
 
     init: function () {
@@ -110,12 +109,12 @@ TaskView.prototype = {
         for (var task in tasks) {
 
             if (tasks[task].taskStatus == 'completed') {
-                html += "<div style="color:green;">";
+                html += "<div style='color:green;'>";
             } else {
                 html += "<div>";
             }
 
-            $tasksContainer.append(html + "<label><input type="checkbox" class="js-task" data-index="" + index + "" data-task-selected="false">" + tasks[task].taskName + "</label></div>");
+            $tasksContainer.append(html +'<label><input type="checkbox" class="js-task" data-index="' + index + '" data-task-selected="false">' + tasks[task].taskName + '</label></div>');
 
             index++;
         }
@@ -145,6 +144,5 @@ TaskView.prototype = {
     }
 
     /* -------------------- End Handlers From Event Dispatcher ----------------- */
-
 
 };

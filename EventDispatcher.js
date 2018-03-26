@@ -1,4 +1,4 @@
-var Event = function (sender) {
+ var Event = function (sender) {
     this._sender = sender;
     this._listeners = [];
 }

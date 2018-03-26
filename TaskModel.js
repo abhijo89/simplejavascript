@@ -8,7 +8,7 @@ var TaskModel = function () {
 
  };
 
- TaskModel.prototype = {
+TaskModel.prototype = {
 
      addTask: function (task) {
          this.tasks.push({
